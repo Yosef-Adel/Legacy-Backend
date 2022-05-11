@@ -38,6 +38,9 @@ router.get("/byId/:id",async (req,res)=>{
     const post = await Posts.findByPk(id ,{include: [Likes]})
     res.json(post)
 });
+
+
+
 router.get("/byUserId/:id" , async(req,res)=>{
     const id =req.params.id;
     const posts= await Posts.findAll({where:{
@@ -46,6 +49,10 @@ router.get("/byUserId/:id" , async(req,res)=>{
     res.json(posts)
 
 }) 
+
+
+
+
 router.post("/", validateTokent, async (req,res)=>{
     const post = req.body;
     post.UserId= req.user.id

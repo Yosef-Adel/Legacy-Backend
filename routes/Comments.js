@@ -4,11 +4,13 @@ const {validateTokent} = require("../middlewares/AuthMiddleWare")
 const router= express.Router();
 const {Comments,Users} = require('../models')
 
-router.get("/:postId",async (req,res)=>{
+router.get("/:postId",(req,res)=>{
     const id =req.params.postId;
-    const comments = await Comments.findAll({
+
+    const comments = Comments.findAll({
         where: { postId : id}
     })
+
     res.json(comments)
 });
 

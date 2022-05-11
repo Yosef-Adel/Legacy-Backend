@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "yO558231",
+    "password": "yo558231",
     "database": "fullstackapp",
     "host": "127.0.0.1",
     "dialect": "mysql"
